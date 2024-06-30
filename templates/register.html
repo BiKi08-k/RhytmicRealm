@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+Rhytmic Realm - Registration
+{% endblock %}
+
+{% block body %}
+<form method="post">
+
+  {% for errors in form.errors.values() %}
+  <div class="alert alert-danger">
+    {% for error in errors %}
+    {{ error }}</br>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  {% with messages = get_flashed_messages(with_categories=true, category_filter=['danger']) %}
+  {% if messages %}
+      <ul class="flashes">
+          {% for category, message in messages %}
+              <li class="alert alert-{{ category }}">{{ message }}</li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+{% endwith %}
+
+
+  <div class="my-font">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{form.username.label(class="form-label")}}
+      {{form.username(class="form-control", placeholder= form.username.label.text)}}
+    </div>
+    {{ form.password.label(class="form-label") }}
+    {{form.password(class="form-control", placeholder=form.password.label.text)}}
+    <div id="passwordHelpBlock" class="form-text mb-3">
+      Your password must be 8-20 characters long and must not contain spaces, special
+      characters, or emoji.
+    </div>
+    {{ form.repeat_password.label(class="form-label ") }}
+    {{form.repeat_password(class="form-control", placeholder=form.repeat_password.label.text)}}
+    <div>
+      {{ form.submit(class="btn btn-primary mt-4 mb-3") }}
+    </div>
+  </div>
+</form>
+
+
+<h7 class="mt-5"> Already registered? <a href="/login">Login</a></h7>
+
+{% endblock %}

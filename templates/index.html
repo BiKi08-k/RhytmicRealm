@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block title %}
+    Rhytmic Realm
+{% endblock %}
+
+{% block body %}
+
+    <h1 class="my-font">Welcome to Rhythmic Realm</h1>
+    <div id="carouselExampleAutoplaying" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card md-3 my-font" style="max-width: 900px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="../static/Images/Music-theory-img.jpeg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Music Theory</h5>
+                                <p class="card-text">Learn all about music theory and understand why music sounds good,
+                                    how all of it
+                                    was invented, and how to write your own musical piece.</p>
+                                <a href="/music_theory">
+                                    <button type="button" class="btn btn-primary">Learn Music Theory</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card mb-3 my-font" style="max-width: 900px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="../static/Images/Music-production.jpeg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Music Production</h5>
+                                <p class="card-text">Learn how to arrange, instrumantilze, record and fully produce your
+                                    musical track.
+                                    Learn working in DAW's (Digital Audio Workstation), and learn using all sorts of
+                                    electronic
+                                    tools needed to create a full song </p>
+                                <a href="/production">
+                                    <button type="button" class="btn btn-primary">Learn Music Production</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card mb-3 my-font" style="max-width: 900px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="../static/Images/Music-mixing.webp" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Music Mixing</h5>
+                                <p class="card-text">Ready to turn your raw recordings into polished gems? Learn the
+                                    essential
+                                    techniques of mixing, from balancing levels to adding depth and clarity. Click below
+                                    to transform your
+                                    tracks and make them stand out in any playlist. </p>
+                                <a href="/mixing">
+                                    <button type="button" class="btn btn-primary">Learn Music Mixing</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card mb-3 my-font" style="max-width: 900px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/static/Images/Music-mastering.jpeg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Music Mastering</h5>
+                                <p class="card-text">Take your music to the next level with mastering. Learn how to
+                                    refine your tracks
+                                    for maximum impact, from polishing the final mix to ensuring consistency across all
+                                    platforms. Click
+                                    below to uncover the secrets of professional mastering and give your music the
+                                    finishing touch it
+                                    deserves. </p>
+                                <a href="/mastering">
+                                    <button type="button" class="btn btn-primary">Learn Music Mastering</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <h2 class="my-font mt-5 "> Choose your Area of Interest</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4 my-font">
+        <div class="col">
+            <a code style="text-decoration:none" href="/music-theory">
+                <div class="card">
+                    <img src="../static/Images/music-theory-img.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Music Theory</h5>
+                        <p class="card-text">Learn all about music theory and understand why music sounds good, how all
+                            of it was
+                            invented, and how to write your own musical piece.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+           <a code style="text-decoration:none" href="/production"> <div class="card">
+                <img src="../static/Images/Music-production.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Music Production</h5>
+                    <p class="card-text">Learn how to arrange, instrumantilze, record and fully produce your musical
+                        track. Learn working in DAW's (Digital Audio Workstation), and learn using all sorts of
+                        electronic tools needed to create a full song</p>
+                </div>
+            </div></a>
+        </div>
+        <div class="col">
+            <a code style="text-decoration:none" href="/mixing"> <div class="card">
+                <img src="../static/Images/Music-mixing.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Music Mixing</h5>
+                    <p class="card-text">Ready to turn your raw recordings into polished gems? Learn the
+                        essential techniques of mixing, from balancing levels to adding depth and clarity.</p>
+                </div>
+            </div></a>
+        </div>
+        <div class="col">
+            <a code style="text-decoration:none" href="/mastering"> <div class="card">
+                <img src="/static/Images/Music-mastering.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Music Mastering</h5>
+                    <p class="card-text">Take your music to the next level with mastering. Learn how to
+                        refine your tracks for maximum impact, from polishing the final mix to ensuring consistency across all
+                        platforms.</p>
+                </div>
+            </div></a>
+        </div>
+    </div>
+
+{% endblock %}

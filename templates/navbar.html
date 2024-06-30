@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md bg-lavender my-font">
+    <div class="container-md">
+        <a class="navbar-brand cambria.font " href="/">Rhytmic Realm</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/music_theory">Music Theory</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Music Production
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/production">Production</a></li>
+                        <li><a class="dropdown-item" href="/mixing">Mixing</a></li>
+                        <li><a class="dropdown-item" href="/mastering">Mastering</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/forum"> General Forum </a>
+                </li>
+            </ul>
+            <div class="btn-group">
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('profile', user_id=user_id) }}" class="nav-link">
+                    <img src="/static/Images/{{ current_user.prof_pic }}" class="rounded-circle" alt="Profile" style="width: 42px; height: 40px;">
+                </a>
+                <a href="/logout" class="btn btn-primary ms-2">Logout</a>
+                {% else %}
+                <a href="/login" class="btn btn-primary" aria-current="page">Login</a>
+                <a href="/register" class="btn btn-primary">Register</a>       
+                {% endif %}
+            </div>
+            <a href="https://www.tbceducation.ge/"> <img src="{{ url_for('static', filename='images/tbc-logo.png') }}" height="45">  </a>
+
+        </div>
+    </div>
+</nav>

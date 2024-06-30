@@ -1,0 +1,53 @@
+.bg-lavender {
+    background-color: #f0eded;
+}
+
+.bg-web {
+    background-color: #e6e3e3;
+}
+
+.bg-container {
+    background-color: #e6e3e3;
+}
+
+.my-font {
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    margin-left: 10px;
+}
+
+.card-header {
+    padding: 0.5rem 1rem;
+}
+
+.username {
+    margin-left: 0.5rem;
+    font-size: 0.9rem; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

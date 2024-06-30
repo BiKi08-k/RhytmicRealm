@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Rhytmic Realm - All Users
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">All Users</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Username</th>
+                <th scope="col">Role</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td><a href="/profile/{{ user.id }}"><img src="/static/Images/{{ user.prof_pic }}" alt="Profile Picture" class="rounded-circle" style="width: 50px; height: 50px;"></td></a>
+                <td>{{ user.username }}</td>
+                <td>{{ user.role }}</td>
+                {% if not user.role == "Admin" %}
+                <td>
+                   <a href="/deleteuser/{{ user.id }}"> <button class="btn btn-danger" onclick="confirmDelete('{{ user.username }}')">Delete</button> </a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

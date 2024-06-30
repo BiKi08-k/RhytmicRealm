@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}
+Rhytmic Realm - Music Theory
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Admin Posts</h2>
+        {% if current_user.role == "Admin" %}
+        <a href="/makepost"><button class="btn btn-primary">Add Post</button></a>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if admin_posts %}
+        {% for admin_post in admin_posts %}
+        <div class="col-md-4 mb-4">
+            <a style="text-decoration:none;" href="/post/{{ admin_post.id }}">
+                <div class="card">
+                    {% if admin_post.image %}
+                    <img src="/static/Images/{{ admin_post.image }}" class="card-img-top img-fluid"
+                        alt="Admin Post Image" style="max-height: 200px; object-fit: contain;">
+                    {% else %}
+                    <img src="/static/Images/default_post_pic.png" class="card-img-top img-fluid"
+                        alt="Default Post Image" style="max-height: 200px; object-fit: contain;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ admin_post.title }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No posts available.</p>
+        {% endif %}
+
+
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4 mt-5">
+        <h2>Community Posts</h2>
+        {% if current_user.role == "Guest" %}
+        <a href="/makepost"><button class="btn btn-primary">Add Post</button></a>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if comun_posts %}
+        {% for comun_post in comun_posts %}
+        <div class="col-md-4 mb-4">
+            <a style="text-decoration:none;" href="/post/{{ comun_post.id }}">
+                <div class="card">
+                    {% if comun_post.image %}
+                    <img src="/static/Images/{{ comun_post.image }}" class="card-img-top img-fluid"
+                        alt="Admin Post Image" style="max-height: 200px; object-fit: contain;">
+                    {% else %}
+                    <img src="/static/Images/default_post_pic.png" class="card-img-top img-fluid"
+                        alt="Default Post Image" style="max-height: 200px; object-fit: contain;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ comun_post.title }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No posts available.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

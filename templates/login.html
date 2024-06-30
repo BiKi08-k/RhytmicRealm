@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Rhytmic Realm - Login
+{% endblock %}
+
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true, category_filter=['danger']) %}
+{% if messages %}
+    <ul class="flashes">
+        {% for category, message in messages %}
+            <li class="alert alert-{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %}
+<form method="post" class="my-font">
+      {{ form.hidden_tag() }}
+  <div class="mb-3 ">
+    <label class="form-label">Username</label>
+    {{form.username(class="form-control", placeholder="username" )}}
+  </div>
+  <label class="form-label">Password</label>
+  {{ form.password( class="form-control", placeholder=form.password.label.text )}}
+  <div>
+    {{form.login(class="btn btn-primary mt-4 mb-3")}}
+  </div>
+</form>
+
+<h7> Don't have an account? <a href='/register'>Register</a></h7>
+{% endblock %}
+
+
+
+
+
